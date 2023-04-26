@@ -42,8 +42,8 @@ public class DeliveryServices {
             updateDelivery.setPhone(deliveryMan.getPhone());
         }
 
-        if (!updateDelivery.getDeliverystar().equals(deliveryMan.getDeliverystar())){
-            updateDelivery.setDeliverystar(deliveryMan.getDeliverystar());
+        if (!updateDelivery.getStar().equals(deliveryMan.getStar())){
+            updateDelivery.setStar(deliveryMan.getStar());
         }
 
         return updateDelivery;
@@ -53,6 +53,9 @@ public class DeliveryServices {
         repository.deleteById(id);
     }
 
+    public List<DeliveryMan> getDeliveryByStar(Long star){
+        return repository.findByStar(star);
+    }
 
 
 }

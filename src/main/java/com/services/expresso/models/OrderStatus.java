@@ -1,2 +1,28 @@
-package com.services.expresso.models;public class OrderStatus {
+package com.services.expresso.models;
+
+import jakarta.persistence.*;
+import lombok.Data;
+import org.springframework.data.annotation.TypeAlias;
+
+import java.util.Date;
+
+@Entity
+@Data
+@Table(name = "orderstatus")
+public class OrderStatus {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "statusid")
+    private Long statusId;
+
+    @Column(name = "location")
+    private String currentLocation;
+
+    @Column(name = "status")
+    private Status status;
+
+    @Column(name = "currentdate")
+    private Date currentDate;
+
+
 }

@@ -29,7 +29,10 @@ public class DeliveryMan {
     private String phone;
 
     @Column(name = "deliverystar")
-    private Long deliverystar;
+    private Long star;
+
+
+
 
 
 }
