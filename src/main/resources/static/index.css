@@ -6,16 +6,40 @@ body{
 .paradiv{
     position: relative;
     width: 70%;
-    top: 150px;
+    top: 90px;
     left: 15%;
     right: 15%;
     border-width: 2px;
-    border-style: solid;
-    border-color: black;
+    border-style: double;
+    border-color: chartreuse;
 }
 .center{
     text-align: center;
 }
 .exprexofont{
+    font-weight: bolder;
+    background-color: chartreuse;
+    color: white;
+    height: 35px;
+}
+.exprexofont:hover{
+    font-size: large;
+}
+.center li{
+    list-style: none;
+}
+li a{
+    text-decoration: none;
+    color: black;
+}
+
+li a:hover{
+    color: chartreuse;
+    font-size: large;
+}
+.foot{
+    text-align: right;
+    font-size: large;
+    color: red;
     font-weight: bolder;
 }
