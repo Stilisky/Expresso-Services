@@ -5,13 +5,14 @@ import com.services.expresso.models.DeliveryMan;
 import com.services.expresso.models.Zone;
 import com.services.expresso.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
+@Controller
 @RequestMapping("/expresso")
-public class ExpressoRest {
+public class ExpressoController {
     @Autowired
     private ClientServices clientServices;
     @Autowired
