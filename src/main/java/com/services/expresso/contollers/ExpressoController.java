@@ -5,13 +5,14 @@ import com.services.expresso.models.DeliveryMan;
 import com.services.expresso.models.Zone;
 import com.services.expresso.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @Controller
-@RequestMapping("/expresso")
 public class ExpressoController {
     @Autowired
     private ClientServices clientServices;
@@ -24,20 +25,43 @@ public class ExpressoController {
     @Autowired
     private ZoneService zoneService;
 
-    @GetMapping(value = "/clients")
-    public List<Client> getAllClients(){
-        return clientServices.allClients();
+    @GetMapping(value = "/")
+    public String home(){
+        return "index";
     }
 
+    @GetMapping(value = "/clients")
+    public String client(){
+        return "client";
+    }
+
+    @GetMapping(value = "/clients/registration")
+    public String clientRegistration(){
+        return "clientform";
+    }
+
+    @PostMapping(value = "/clients/register")
+    public String clientregister(@ModelAttribute Client client){
+        System.out.println(client.toString());
+        clientServices.saveClient(client);
+        return "clientform";
+    }
+
+    @GetMapping(value = "/clients/all")
+    public String getAllClients(Model model){
+        List<Client> clients = clientServices.allClients();
+        model.addAttribute("clients", clients);
+        return "allclients";
+    }
+/*
+
+
     @GetMapping(value = "/clients/{id}")
-    public Client getClient(@PathVariable Long id){
+    public String getClient(@PathVariable Long id, Model model){
         return clientServices.clientById(id);
     }
 
-    @PostMapping(value = "/clients")
-    public Client saveClient(@RequestBody Client client){
-        return clientServices.saveClient(client);
-    }
+
 
     @PutMapping(value = "/clients/{id}")
     public Client updateClient(@PathVariable Long id, @RequestBody Client client){
@@ -99,7 +123,7 @@ public class ExpressoController {
         return deliveryServices.getDeliveryByStar(star);
     }
 
-
+*/
 
 
 

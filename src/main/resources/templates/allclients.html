@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Expresso Services</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel='stylesheet' type='text/css' media='screen' th:href='@{/styles/index.css}' href="index.css">
+        <script src='main.js'></script>
+</head>
+<body>
+    <br><br><br><br>
+    <section class="paradiv">
+        <div class="center exprexofont">
+            EXPRESSO SERVICES
+        </div>
+        <h3 class="center" >All Clients</h3>
+        
+        <table class="center tablerow">
+            <thead class="solid">
+                <th>Client ID</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Address</th>
+                <th>Phone</th>
+                <th>Nationality</th>
+            </thead>
+            <tr class="solid" th:each="client : ${clients}">
+                <td><span th:text = ${client.clientid} >cliID</span></td>
+                <td><span th:text = ${client.firstname} >Firstname</span></td>
+                <td><span th:text = ${client.lastname} >Lastname</span></td>
+                <td><span th:text = ${client.address} >Address</span></td>
+                <td><span th:text = ${client.phone} >Phone</span></td>
+                <td><span th:text = ${client.nationality} >Nationality</span></td>
+            </tr>
+        </table>
+        <div class="foot" id="allcli">
+            Produced By Be CONNECT
+        </div>
+    </section>
+</body>
+</html>

@@ -5,46 +5,28 @@
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
         <title>Expresso Services</title>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
-        <link rel='stylesheet' type='text/css' media='screen' th:href='@{index.css}'>
+        <link rel='stylesheet' type='text/css' media='screen' th:href='@{/styles/index.css}' href="index.css">
         <script src='main.js'></script>
     </head>
     <body>
+        <br><br><br><br>
         <section class="paradiv">
             <div class="center exprexofont">
                 EXPRESSO SERVICES
             </div>
-            <h3 class="center">Client Registration</h3>
-            <div>
-                <form action="post" class="center">
-                    <div>
-                        <label for="firstname">FirstName : </label>
-                        <input type="text" name="firstname" placeholder="FirstName">
-                    </div>
-                    <div>
-                        <label for="lastname">LastName : </label>
-                        <input type="text" name="lastname" placeholder="LastName">
-                    </div>
-                    <div>
-                        <label for="address">Address : </label>
-                        <input type="text" name="address" placeholder="7 Avenue Jean Paul, Cotonou, BENIN">
-                    </div>
-                    <div>
-                        <label for="phone">Phone : </label>
-                        <input type="tel" name="phone" placeholder="+229 67660996">
-                    </div>
-                    <div>
-                        <label for="nationality">Nationality : </label>
-                        <input type="text" name="nationality" placeholder="nationality">
-                    </div>
-                    <div>
-                        <input type="submit" value="SUBMIT">
-                    </div>
-                </form>
-            </div>
+            <ul class="center">
+                <li><a th:href="@{/clients/registration}">Client Registration</a> </li>
+                <li><a th:href="@{/clients/all}">All Clients</a></li>
+                <li><a href="#">Update Client information</a> </li>
+                <li><a href="#">Delete Client</a> </li>
+                 <li><a href="#">New Order</a> </li>
+            </ul>
             <div class="foot">
                 Produced By Be CONNECT
             </div>
         </section>
+        
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     </body>   
     
 </html>

@@ -5,7 +5,7 @@
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
         <title>Expresso Services</title>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
-        <link rel='stylesheet' type='text/css' media='screen' th:href='@{index.css}'>
+        <link rel='stylesheet' type='text/css' media='screen' th:href='@{/styles/index.css}' href="index.css">
         <script src='main.js'></script>
     </head>
     <body>
@@ -14,7 +14,7 @@
                 EXPRESSO SERVICES
             </div>
             <ul class="center">
-                <li><a href="client.html">CLIENT</a> </li>
+                <li><a th:href="@{/clients}">CLIENT</a> </li>
                 <li><a href="#">ORDER</a></li>
                 <li><a href="#">DELIVER</a> </li>
                 <li><a href="#">ORDER</a> </li>
