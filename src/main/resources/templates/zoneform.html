@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Expresso Services</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' th:href='@{/styles/index.css}'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <br><br><br><br>
+    <section class="paradiv">
+        <div class="center exprexofont">
+            EXPRESSO SERVICES
+        </div>
+        <h3 class="center">Zone Registration</h3>
+        <div>
+            <form th:action="@{/zone/register}" method="post" class="center">
+                <div>
+                    <label for="zoneName">Zone Name : </label>
+                    <input type="text" name="zoneName" placeholder="Paris" required>
+                </div>
+                <div>
+                    <input type="submit" value="SUBMIT">
+                </div>
+            </form>
+        </div>
+        <div class="return">
+            <a th:href="@{/delivery}">RETURN</a>
+        </div>
+        <div class="foot">
+            Produced By Be CONNECT
+        </div>
+    </section>
+</body>
+
+</html>

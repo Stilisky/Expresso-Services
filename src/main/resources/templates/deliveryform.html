@@ -38,6 +38,14 @@
                     <input type="number" name="delivstar" placeholder="XX">
                 </div>
                 <div>
+                    <label for="zoneName">Zone : </label>
+                    <select name="zoneName">
+                        <span th:each="zone : ${zones}">
+                            <option th:text="${zone.zoneName}">NomZone</option>
+                        </span>
+                    </select>
+                </div>
+                <div>
                     <input type="submit" value="SUBMIT">
                 </div>
             </form>

@@ -60,8 +60,21 @@ public class ExpressoController {
     }
 
     @GetMapping(value = "/deliveryregis")
-    public String deliveryForm(){
+    public String deliveryForm(Model model){
+        List<Zone> zones = zoneService.allZones();
+        model.addAttribute("zones", zones);
         return "deliveryform";
+    }
+
+    @GetMapping(value = "/zone")
+    public String zone(){
+        return "zoneform";
+    }
+
+    @PostMapping(value = "/zone/register")
+    public String zoneRegister(@ModelAttribute Zone zone){
+        zoneService.saveZone(zone);
+        return "zoneform";
     }
 
     @PostMapping(value = "/delivery/register")
