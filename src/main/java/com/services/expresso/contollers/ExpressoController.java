@@ -53,9 +53,31 @@ public class ExpressoController {
         model.addAttribute("clients", clients);
         return "allclients";
     }
+
+    @GetMapping(value = "/delivery")
+    public String delivery(){
+        return "delivery";
+    }
+
+    @GetMapping(value = "/deliveryregis")
+    public String deliveryForm(){
+        return "deliveryform";
+    }
+
+    @PostMapping(value = "/delivery/register")
+    public String deliveryRegister(@ModelAttribute DeliveryMan deliveryMan){
+        deliveryServices.saveDelivery(deliveryMan);
+        return "deliveryform";
+    }
+
+    @GetMapping(value = "/deliveries/all")
+    public String deliveries(Model model){
+        List<DeliveryMan> deliveries = deliveryServices.allDeliveryMan();
+        model.addAttribute("deliveries", deliveries);
+        return "alldeliveries";
+    }
+
 /*
-
-
     @GetMapping(value = "/clients/{id}")
     public String getClient(@PathVariable Long id, Model model){
         return clientServices.clientById(id);

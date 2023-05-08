@@ -11,8 +11,9 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "order")
+@Table(name = "ordercmde")
 public class Order {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "orderid")
@@ -29,5 +30,20 @@ public class Order {
 
     @Column(name = "price")
     private double price;
+
+    @ManyToOne(
+            cascade = CascadeType.ALL,
+            fetch = FetchType.EAGER
+    )
+    private Client client;
+
+    @OneToMany( mappedBy ="orders")
+    private DeliveryMan deliveryMan;
+
+    @OneToOne(
+            cascade = CascadeType.ALL,
+            fetch = FetchType.EAGER
+    )
+    private OrderStatus orderStatus;
 
 }

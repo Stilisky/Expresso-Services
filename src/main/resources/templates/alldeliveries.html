@@ -14,30 +14,31 @@
         <div class="center exprexofont">
             EXPRESSO SERVICES
         </div>
-        <h3 class="center" >All Clients</h3>
+        <h3 class="center" >All Deliveries</h3>
         
         <table class="center tablerow">
             <thead class="solid">
-                <th>Client ID</th>
+                <th>Delivery ID</th>
                 <th>Firstname</th>
                 <th>Lastname</th>
                 <th>Address</th>
                 <th>Phone</th>
-                <th>Nationality</th>
+                <th>Star</th>
+                <th>Zone</th>
             </thead>
-            <tr class="solid" th:each="client : ${clients}">
-                <td><span th:text = ${client.clientid} >cliID</span></td>
-                <td><span th:text = ${client.firstname} >Firstname</span></td>
-                <td><span th:text = ${client.lastname} >Lastname</span></td>
-                <td><span th:text = ${client.address} >Address</span></td>
-                <td><span th:text = ${client.phone} >Phone</span></td>
-                <td><span th:text = ${client.nationality} >Nationality</span></td>
+            <tr class="solid" th:each="delivery : ${deliveries}">
+                <td><span th:text = ${delivery.deliveryid} >DeliveryID</span></td>
+                <td><span th:text = ${delivery.firstname} >Firstname</span></td>
+                <td><span th:text = ${delivery.lastname} >Lastname</span></td>
+                <td><span th:text = ${delivery.address} >Address</span></td>
+                <td><span th:text = ${delivery.phone} >Phone</span></td>
+                <td><span th:text = ${delivery.star} >Star</span></td>
             </tr>
         </table>
         <div class="return">
-            <a th:href="@{/clients}" >RETURN</a>
+            <a th:href="@{/delivery}" >RETURN</a>
         </div>
-        <div class="foot" id="allcli">
+        <div class="foot">
             Produced By Be CONNECT
         </div>
     </section>

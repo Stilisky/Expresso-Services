@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Data
 @AllArgsConstructor
@@ -29,9 +31,17 @@ public class DeliveryMan {
     private String phone;
 
     @Column(name = "deliverystar")
-    private Long star;
+    private String star;
 
-
+    @OneToMany(
+            mappedBy = "deliveryMEN"
+    )
+    private Zone zone;
+    @ManyToOne(
+            cascade = CascadeType.ALL,
+            fetch = FetchType.EAGER
+    )
+    private List<Order> orders;
 
 
 

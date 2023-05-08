@@ -55,6 +55,14 @@ li a:hover{
     border-style: solid;
    
 }
+.return{
+    text-decoration: none;
+    color: blue;
+    text-align: left;
+    font-size: large;
+    font-weight: bolder;
+    margin-left: 25px;
+}
 .foot{
     text-align: right;
     font-size: large;
