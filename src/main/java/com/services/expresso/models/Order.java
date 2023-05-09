@@ -35,15 +35,17 @@ public class Order {
             cascade = CascadeType.ALL,
             fetch = FetchType.EAGER
     )
-    private Client client;
-
-    @OneToMany( mappedBy ="orders")
+    @JoinColumn(name = "orderid")
     private DeliveryMan deliveryMan;
 
-    @OneToOne(
+    @ManyToOne(
             cascade = CascadeType.ALL,
             fetch = FetchType.EAGER
     )
+    @JoinColumn(name = "orderid")
+    private Client client;
+
+    @OneToOne(mappedBy = "order")
     private OrderStatus orderStatus;
 
 }

@@ -20,9 +20,6 @@ public class Zone {
     @Column(name = "zonename")
     private String zoneName;
 
-    @ManyToOne(
-            cascade = CascadeType.ALL,
-            fetch = FetchType.EAGER
-    )
+    @OneToMany(mappedBy = "zone")
     private List<DeliveryMan> deliveryMEN;
 }

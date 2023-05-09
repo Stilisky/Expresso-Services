@@ -33,16 +33,17 @@ public class DeliveryMan {
     @Column(name = "deliverystar")
     private String star;
 
-    @OneToMany(
-            mappedBy = "deliveryMEN"
-    )
-    private Zone zone;
     @ManyToOne(
             cascade = CascadeType.ALL,
             fetch = FetchType.EAGER
     )
+    @JoinColumn(name = "deliveryid")
+    private Zone zone;
+
+    @OneToMany(
+            cascade = CascadeType.ALL,
+            orphanRemoval = true,
+            fetch = FetchType.EAGER)
+    @JoinColumn(name = "deliveryid")
     private List<Order> orders;
-
-
-
 }

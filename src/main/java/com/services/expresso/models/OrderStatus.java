@@ -24,5 +24,13 @@ public class OrderStatus {
     @Column(name = "currentdate")
     private Date currentDate;
 
+    @OneToOne(
+            cascade = CascadeType.ALL,
+            orphanRemoval = true,
+            fetch = FetchType.EAGER
+    )
+    @JoinColumn(name = "statusid")
+    private Order order;
+
 
 }
