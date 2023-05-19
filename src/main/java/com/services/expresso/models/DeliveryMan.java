@@ -31,15 +31,14 @@ public class DeliveryMan {
     private String phone;
 
     @Column(name = "deliverystar")
-    private String star;
+    private Integer star;
 
     @ManyToOne(
             cascade = CascadeType.ALL,
             fetch = FetchType.EAGER
     )
-    @JoinColumn(name = "deliveryid")
+    @JoinColumn(name = "zoneid")
     private Zone zone;
-
     @OneToMany(
             cascade = CascadeType.ALL,
             orphanRemoval = true,

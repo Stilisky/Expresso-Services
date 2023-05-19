@@ -20,31 +20,31 @@
                 <div>
                     <label for="firstname">FirstName : </label>
                     <input type="text" name="firstname" placeholder="FirstName">
-                </div>
+                </div><br>
                 <div>
                     <label for="lastname">LastName : </label>
                     <input type="text" name="lastname" placeholder="LastName">
-                </div>
+                </div><br>
                 <div>
                     <label for="address">Address : </label>
                     <input type="text" name="address" placeholder="71-76 Covent Street, London, ENGLAND">
-                </div>
+                </div><br>
                 <div>
                     <label for="phone">Phone : </label>
                     <input type="tel" name="phone" placeholder="+229 XXXXXX">
-                </div>
+                </div><br>
                 <div>
                     <label for="delivstar">Star : </label>
-                    <input type="number" name="delivstar" placeholder="XX">
-                </div>
+                    <input type="number" name="star" placeholder="XX" max="5">
+                </div><br>
                 <div>
                     <label for="zoneName">Zone : </label>
-                    <select name="zoneName">
-                        <span th:each="zone : ${zones}">
-                            <option th:text="${zone.zoneName}">NomZone</option>
+                    <select >
+                        <span name="zone" th:each="zone : ${zones}">
+                            <option th:text="${zone.zoneName}" >NomZone</option>
                         </span>
                     </select>
-                </div>
+                </div><br>
                 <div>
                     <input type="submit" value="SUBMIT">
                 </div>

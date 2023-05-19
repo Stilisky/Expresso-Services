@@ -14,12 +14,15 @@ import java.util.List;
 @Table(name = "zone")
 public class Zone {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "zoneid")
     private Long zoneId;
 
     @Column(name = "zonename")
     private String zoneName;
 
-    @OneToMany(mappedBy = "zone")
+    @OneToMany(cascade = CascadeType.ALL,
+            fetch = FetchType.EAGER)
+    @JoinColumn(name = "zoneid")
     private List<DeliveryMan> deliveryMEN;
 }

@@ -25,24 +25,24 @@ public class Order {
     @Column(name = "orderdate")
     private Date orderDate;
 
-    @Column(name = "destination")
+    @Column(name = "destinationaddress")
     private String destinationAddress;
 
     @Column(name = "price")
     private double price;
 
-    @ManyToOne(
+   @ManyToOne(
             cascade = CascadeType.ALL,
             fetch = FetchType.EAGER
     )
-    @JoinColumn(name = "orderid")
+    @JoinColumn(name = "orderid", insertable=false, updatable=false)
     private DeliveryMan deliveryMan;
 
     @ManyToOne(
             cascade = CascadeType.ALL,
             fetch = FetchType.EAGER
     )
-    @JoinColumn(name = "orderid")
+    @JoinColumn(name = "orderid",insertable=false, updatable=false)
     private Client client;
 
     @OneToOne(mappedBy = "order")

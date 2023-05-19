@@ -15,7 +15,7 @@ public class OrderStatus {
     @Column(name = "statusid")
     private Long statusId;
 
-    @Column(name = "location")
+    @Column(name = "currentlocation")
     private String currentLocation;
 
     @Column(name = "status")
